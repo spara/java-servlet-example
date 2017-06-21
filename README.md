@@ -87,3 +87,5 @@ The catpic servlet that renders images from URLS is configured as a separate ser
   </servlet-mapping> 
 ```
 ## Debugging in an Eclipse
+
+Please see the [java debgging tutoria](https://github.com/docker/labs/blob/master/developer-tools/java-debugging/Eclipse-README.md#configure-remote-debugging) to see how to use Eclipse to debug your code.
