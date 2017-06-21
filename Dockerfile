@@ -1,6 +1,6 @@
 #MAINTAINER Sophia Parafina <sophia.parafina@docker.com>
 
-# build servlet
+# build servlet and create war file
 FROM maven:latest AS warfile
 WORKDIR /usr/src/catweb
 COPY pom.xml .
@@ -21,4 +21,4 @@ ENV JPDA_ADDRESS="8000"
 ENV JPDA_TRANSPORT="dt_socket"
 EXPOSE 8080
 WORKDIR /usr/local/tomcat/bin
-#CMD ["run.sh"]
+CMD ["run.sh"]

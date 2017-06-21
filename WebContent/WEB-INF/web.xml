@@ -10,11 +10,6 @@
     <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
   </servlet>
 
-  <servlet>
-    <servlet-name>catpic</servlet-name>
-    <servlet-class>com.docker.catpic</servlet-class>
-  </servlet>
-  
   <servlet-mapping>
     <servlet-name>default</servlet-name>
     <url-pattern>*.html</url-pattern>
@@ -24,7 +19,12 @@
     <servlet-name>default</servlet-name>
     <url-pattern>*.css</url-pattern>
   </servlet-mapping>
-  
+
+ <servlet>
+    <servlet-name>catpic</servlet-name>
+    <servlet-class>com.docker.catpic</servlet-class>
+ </servlet>
+
   <servlet-mapping>
     <servlet-name>catpic</servlet-name>
     <url-pattern>/</url-pattern>
