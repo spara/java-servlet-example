@@ -1,10 +1,12 @@
 # Java Servlet Tutorial
 
-This tutorial covers how to develop a Java servlet using Docker with your preferred IDE
+Servlets are Java web components used to create web application. They respond to incoming web requests and can respond via dynamic web page. Servlets run in a Java application server such as Apache Tomcat, IBM Websphere, or Oracle WebLogic.
+
+In this tutorial, we will cover building and deploying a simple servlet and web page using Docker.
 
 ## Building and running the application
 
-This example requires Docker CE 17.06 or higher. Clone the repository, build the application and deploy it in Tomcat:
+This example requires Docker CE 17.06 or higher. Clone the repository and build the application. The servlet is deployed in an Apache Tomcat container.
 
 ```
 docker image build -t catweb_java .
