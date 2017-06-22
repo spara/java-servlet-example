@@ -12,27 +12,31 @@ This example requires Docker CE 17.06 or higher. Clone the repository and build 
 docker image build -t catweb_java .
 ```
 
-The Dockerfile uses a multi-stage build to compile the servlet and package it into a war file.
+The Dockerfile uses a multi-stage build to compile the servlet and package it into a Web Archive or war file. 
 
 ```
-# build servlet and create war file
 FROM maven:latest AS warfile
+
+# Compile servlet and create war file
 WORKDIR /usr/src/catweb
 COPY pom.xml .
 RUN mvn -B -f pom.xml -s /usr/share/maven/ref/settings-docker.xml dependency:resolve
 COPY . .
 RUN mvn -B -s /usr/share/maven/ref/settings-docker.xml package
 ```
-The pom.xml file is copied to a maven container and dependencies are added to the maven container. The code is copied to the maven container and the servlet war file is generated.
+The pom.xml file is copied to a maven container and dependencies are added to the maven container. Note that the Dockerfile [packages a local repository](https://github.com/carlossg/docker-maven#packaging-a-local-repository-with-the-image) with the image. The code is copied to the maven container and the servlet war file is generated.
 ```
 FROM tomcat:9.0-jre8-alpine
+
 # ADD tomcat/catalina.sh $CATALINA_HOME/bin/
 WORKDIR /usr/local/tomcat/bin
 COPY run.sh run.sh
 RUN chmod +x run.sh
+
 #Copy war file
 WORKDIR /usr/local/tomcat/webapps
 COPY  --from=warfile /usr/src/catweb/target/java-servlet-example-0.0.1-SNAPSHOT.war CatWeb.war
+
 # Expose ports
 ENV JPDA_ADDRESS="8000"
 ENV JPDA_TRANSPORT="dt_socket"
