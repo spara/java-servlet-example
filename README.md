@@ -2,6 +2,8 @@
 
 Servlets are Java web components used to create web applications. They respond to incoming web requests and return dynamic web pages, data, or other media. Servlets run in a Java application server such as Apache Tomcat, IBM Websphere, or Oracle WebLogic.
 
+The advantage of using Docker for servlet development is that compiling the code and deploying it on a application server only takes a single step instead of compiling the code, packaging the application and deploying to an app server in several steps.
+
 In this tutorial, we will cover building and deploying a simple servlet and web page using Docker.
 
 ## Building and running the application
