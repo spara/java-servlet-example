@@ -55,7 +55,7 @@ docker container run -d --name catweb -p 8080:8080 -p 8000:8000 catweb_java
 ```` 
 ## The CatWeb Application
 
-The catpic servlet responds to a request by randomly selecting a link from an array URLS. The image is read into a buffered image and written to the servlet's response stream.
+The catpic servlet responds to a request by randomly selecting a link from an array URLs. The image is read into a buffered image and written to the servlet's response stream.
 
 The image is rendered in an HTML page. Reloading the page calls the catpic servlet and loads a new cat picture in the frame.
 
@@ -94,4 +94,4 @@ The catpic servlet that renders images from URLS is configured as a separate ser
 ```
 ## Debugging in an Eclipse
 
-Please see the [java debgging tutoria](https://github.com/docker/labs/blob/master/developer-tools/java-debugging/Eclipse-README.md#configure-remote-debugging) to see how to use Eclipse to debug your code.
+Please see the [java debugging tutorial](https://github.com/docker/labs/blob/master/developer-tools/java-debugging/Eclipse-README.md#configure-remote-debugging) to see how to use Eclipse to debug your code.
