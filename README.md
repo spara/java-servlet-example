@@ -1,6 +1,6 @@
 # Java Servlet Tutorial
 
-Servlets are Java web components used to create web application. They respond to incoming web requests and can respond via dynamic web page. Servlets run in a Java application server such as Apache Tomcat, IBM Websphere, or Oracle WebLogic.
+Servlets are Java web components used to create web applications. They respond to incoming web requests and return dynamic web pages, data, or other media. Servlets run in a Java application server such as Apache Tomcat, IBM Websphere, or Oracle WebLogic.
 
 In this tutorial, we will cover building and deploying a simple servlet and web page using Docker.
 
@@ -58,7 +58,7 @@ The image is rendered in an HTML page. Reloading the page calls the catpic servl
 ![](catpic.png)
 ## Deployment Details
 
-The application consists of a servlet that renders images from a list of URLs in a web page and the default Tomcat servlet. It is configured via the web.xml file making use of the default servlet to serve the index.html page.
+The application consists of a servlet that renders images from a list of URLs and the default Tomcat servlet. It is configured via the web.xml file, making use of the default servlet to serve the index.html page.
 
 ```
   <servlet>
